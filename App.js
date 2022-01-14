@@ -1,112 +1,82 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { View, StyleSheet, NativeModules } from 'react-native';
+import Drawer from 'react-native-drawer'
+import ClimateListComponent from './components/ClimateListComponent';
+import MainViewComponent from './components/MainViewComponent';
+const { ClimateMockResponseManager } = NativeModules;
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+export default class App extends React.Component {
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+  constructor() {
+    super()
+    this.state = {
+      drawerStatus: 'isClosed',
+      climates: [],
+      selectedCity: {}
+    }
+  }
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  componentDidMount() {
+    this.getClimateResponse();
+  }
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  getClimateResponse = async () => {
+    let response = await ClimateMockResponseManager.getClimateResponse();
+    let parsedClimates = JSON.parse(response);
+    this.setState({
+      climates: parsedClimates.climates,
+      selectedCity: parsedClimates.climates.filter((item) => item.city === "Tokyo")[0] // Set Tokyo as initial value
+    })
+  }
+
+  onSelectCity = (city) => {
+    if (!city) {
+      return
+    }
+    this.setState({
+      selectedCity: this.state.climates.filter((item) => item.city === city)[0]
+    })
+    this.closeControlPanel()
+  }
+
+  closeControlPanel = () => {
+    this._drawer.close()
+    this.setState({ drawerStatus: 'isClosed' })
   };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+  openControlPanel = () => {
+    this._drawer.open()
+    this.setState({ drawerStatus: 'isOpened' })
+  };
+
+  render() {
+
+    return (
+      <View style={styles.container}>
+        <Drawer
+          tapToClose={true}
+          ref={(ref) => this._drawer = ref}
+          content={
+            <ClimateListComponent
+              items={this.state.climates}
+              drawerStatus={this.state.drawerStatus}
+              onDrawerOpen={this.openControlPanel}
+              onDrawerClose={this.closeControlPanel}
+              onSelectCity={this.onSelectCity} />}
+        >
+          <MainViewComponent
+            onDrawerClose={this.closeControlPanel}
+            onDrawerOpen={this.openControlPanel}
+            item={this.state.selectedCity}
+            drawerStatus={this.state.drawerStatus} />
+        </Drawer>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+  container: {
+    flex: 1
+  }
 });
-
-export default App;

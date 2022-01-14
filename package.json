@@ -10,8 +10,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@ja-ka/react-native-fade-in-flatlist": "^1.0.7",
+    "@react-native-community/viewpager": "^5.0.11",
     "react": "17.0.2",
-    "react-native": "0.66.4"
+    "react-native": "0.66.4",
+    "react-native-drawer": "^2.5.1",
+    "react-native-scrollable-tab-view": "^1.0.0",
+    "react-native-swipe-tabs": "1.0.7",
+    "react-native-vector-icons": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",

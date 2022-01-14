@@ -1,0 +1,203 @@
+{
+  "climates": [
+    {
+      "id": 1,
+      "city": "Manila",
+      "temperature": "37",
+      "status": "Sunny",
+      "imageUrl": "https://cdn.pixabay.com/photo/2016/10/02/12/15/manila-1709394__340.jpg",
+      "temperature1": "42",
+      "temperature2": "45",
+      "previousClimates": [
+        {
+          "date": "17Jan",
+          "day": "Wed",
+          "temperature1": "39",
+          "temperature2": "21"
+        },
+        {
+          "date": "18Jan",
+          "day": "Thu",
+          "temperature1": "39",
+          "temperature2": "27"
+        },
+        {
+          "date": "19Jan",
+          "day": "Fri",
+          "temperature1": "42",
+          "temperature2": "32"
+        },
+        {
+          "date": "20Jan",
+          "day": "Sat",
+          "temperature1": "54",
+          "temperature2": "37"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "city": "London",
+      "temperature": "37",
+      "status": "Cloudy",
+      "imageUrl": "https://cdn.pixabay.com/photo/2014/09/11/18/23/tower-bridge-441853__340.jpg",
+      "temperature1": "37",
+      "temperature2": "40",
+      "previousClimates": [
+        {
+          "date": "17Jan",
+          "day": "Wed",
+          "temperature1": "39",
+          "temperature2": "21"
+        },
+        {
+          "date": "18Jan",
+          "day": "Thu",
+          "temperature1": "39",
+          "temperature2": "27"
+        },
+        {
+          "date": "19Jan",
+          "day": "Fri",
+          "temperature1": "42",
+          "temperature2": "32"
+        },
+        {
+          "date": "20Jan",
+          "day": "Sat",
+          "temperature1": "54",
+          "temperature2": "37"
+        },
+        {
+          "date": "21Jan",
+          "day": "Sun",
+          "temperature1": "50",
+          "temperature2": "38"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "city": "New York",
+      "temperature": "35",
+      "status": "Snow showers",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/02/16/20/29/nyc-4854718__340.jpg",
+      "temperature1": "35",
+      "temperature2": "40",
+      "previousClimates": [
+        {
+          "date": "17Jan",
+          "day": "Wed",
+          "temperature1": "39",
+          "temperature2": "21"
+        },
+        {
+          "date": "18Jan",
+          "day": "Thu",
+          "temperature1": "39",
+          "temperature2": "27"
+        },
+        {
+          "date": "19Jan",
+          "day": "Fri",
+          "temperature1": "42",
+          "temperature2": "32"
+        },
+        {
+          "date": "20Jan",
+          "day": "Sat",
+          "temperature1": "54",
+          "temperature2": "37"
+        },
+        {
+          "date": "21Jan",
+          "day": "Sun",
+          "temperature1": "50",
+          "temperature2": "38"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "city": "Miami",
+      "temperature": "66",
+      "status": "Partly cloudy",
+      "imageUrl": "https://cdn.pixabay.com/photo/2019/01/05/18/24/miami-3915622__340.jpg",
+      "temperature1": "66",
+      "temperature2": "60",
+      "previousClimates": [
+        {
+          "date": "17Jan",
+          "day": "Wed",
+          "temperature1": "39",
+          "temperature2": "21"
+        },
+        {
+          "date": "18Jan",
+          "day": "Thu",
+          "temperature1": "39",
+          "temperature2": "27"
+        },
+        {
+          "date": "19Jan",
+          "day": "Fri",
+          "temperature1": "42",
+          "temperature2": "32"
+        },
+        {
+          "date": "20Jan",
+          "day": "Sat",
+          "temperature1": "54",
+          "temperature2": "37"
+        },
+        {
+          "date": "21Jan",
+          "day": "Sun",
+          "temperature1": "50",
+          "temperature2": "38"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "city": "Tokyo",
+      "temperature": "42",
+      "status": "Fog",
+      "imageUrl": "https://cdn.pixabay.com/photo/2017/04/01/10/59/tokyo-2193354__340.jpg",
+      "temperature1": "42",
+      "temperature2": "45",
+      "previousClimates": [
+        {
+          "date": "17Jan",
+          "day": "Wed",
+          "temperature1": "39",
+          "temperature2": "21"
+        },
+        {
+          "date": "18Jan",
+          "day": "Thu",
+          "temperature1": "39",
+          "temperature2": "27"
+        },
+        {
+          "date": "19Jan",
+          "day": "Fri",
+          "temperature1": "42",
+          "temperature2": "32"
+        },
+        {
+          "date": "20Jan",
+          "day": "Sat",
+          "temperature1": "54",
+          "temperature2": "37"
+        },
+        {
+          "date": "21Jan",
+          "day": "Sun",
+          "temperature1": "50",
+          "temperature2": "38"
+        }
+      ]
+    }
+  ]
+}
