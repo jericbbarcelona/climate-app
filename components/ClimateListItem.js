@@ -3,8 +3,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Feather';
 
 const ClimateListItem = ({ item, onSelectCity }) => {
-    console.log('--ClimateListItem--', item);
-
     return (
         <TouchableOpacity style={styles.listItem} onPress={() => onSelectCity(item.city)}>
             <View style={styles.listItemView}>

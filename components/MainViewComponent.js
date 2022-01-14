@@ -7,8 +7,6 @@ import ClimateHistoryComponent from './ClimateHistoryComponent';
 import ViewPager from '@react-native-community/viewpager';
 
 const MainViewComponent = ({ item, drawerStatus, onDrawerClose, onDrawerOpen }) => {
-    console.log('--MainViewComponent--', item)
-
     return (
         <View style={styles.container}>
             <ImageBackground
