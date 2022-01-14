@@ -3,11 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Feather';
 
 const ClimateHistoryListComponent = ({ item }) => {
-    console.log('--ClimateHistoryListComponent--', item)
     return (
         <View style={styles.listItem}>
             <View style={styles.listItemView}>
-                <Icon style={styles.iconStyle} name="sun" size={50} color="gray" />
+                <Icon style={styles.iconStyle} name="sun" size={45} color="gray" />
                 <View style={styles.dateView}>
                     <Text style={styles.dayText}>{item.day}</Text>
                     <Text style={styles.dateText}>{item.date}</Text>

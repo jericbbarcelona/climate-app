@@ -3,8 +3,6 @@ import { View, Text, StyleSheet, FlatList } from 'react-native';
 import ClimateHistoryListComponent from './ClimateHistoryListComponent';
 
 const ClimateHistoryComponent = ({ city, items }) => {
-    console.log('--ClimateHistoryComponent--', city);
-    console.log('--ClimateHistoryComponent--', items);
     return (
         <View style={styles.container}>
             <Text style={styles.cityText}>{city}</Text>

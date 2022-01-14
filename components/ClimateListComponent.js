@@ -6,7 +6,6 @@ import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 
 const ClimateListComponent = ({ items, drawerStatus, onSelectCity, onDrawerOpen, onDrawerClose }) => {
-    console.log('--ClimateListComponent--', items);
     return (
         <View style={styles.container}>
             <View style={styles.headerStyle} onPress={drawerStatus === 'isClosed' ? onDrawerOpen : onDrawerClose}>
